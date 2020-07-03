@@ -1,0 +1,5 @@
+[dimension-rpms]
+name=Dimension RPMs
+baseurl=https://dimension-sh.github.io/dimension-rpms/x86_64/
+enabled=1
+gpgcheck=0

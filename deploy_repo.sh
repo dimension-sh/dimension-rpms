@@ -15,6 +15,7 @@ rm -rf public/*
 echo "Copying new files"
 cp -R REPO/* public/
 cat README.repo.md | pandoc -t html --ascii > public/index.html
+cp dimension-rpms.repo public/
 
 echo "Publishing..."
 cd public && git add --all && git commit -m "Publishing updated repo"
