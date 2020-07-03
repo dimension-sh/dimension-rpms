@@ -1,0 +1,51 @@
+--- Makefile.makefile	2020-07-03 13:19:49.714349146 +0100
++++ Makefile	2020-07-03 13:30:51.482264640 +0100
+@@ -1,25 +1,13 @@
++DESTDIR ?=
++PREFIX ?= /usr/local
+ 
+-BINDIR=/usr/local/sbin
+-MANDIR=/usr/local/man/man8
+-
+-CC = gcc 
+-CFLAGS = -O2 -Wall -Wsurprising
+-
+-#or, if you do not have libinent at all:
+-#CFLAGS = -O2 -Wall -DDONT_HAVE_LIBIDENT
+-
+-#uncomment the following line if you do have libident.so
+-#LDFLAGS = -lident
+-
++CC = gcc
++CFLAGS = -O2 -Wall -Wsurprising -DDONT_HAVE_LIBIDENT
+ 
+ all: efingerd
+ 
+ efingerd: efingerd.o child.o
+-#	$(CC) $(CFLAGS) $(LDFLAGS) efingerd.o child.o -o efingerd
+-#replace the line below with the line above if you have libident.so, or 
+-#do not have libident at all
+-#modify path to libident.a if necessary
+-	$(CC) $(CFLAGS) $(LDFLAGS) efingerd.o child.o /usr/lib/libident.a -o efingerd
++	$(CC) $(CFLAGS) $(LDFLAGS) efingerd.o child.o -o efingerd
+ 	strip efingerd
+ 
+ efingerd.o: efingerd.c
+@@ -31,10 +19,11 @@
+ clean:
+ 	rm -f *~ *.o efingerd
+ 
+-install: efingerd 
+-	cp efingerd $(BINDIR)
+-	mkdir -p $(DESTDIR)/etc/efingerd
+-	cp examples-standard/* $(DESTDIR)/etc/efingerd
++install: efingerd
++	install -m 0755 -d $(DESTDIR)$(PREFIX)/sbin
++	install -m 0755 efingerd $(DESTDIR)$(PREFIX)/sbin
++	install -m 0755 -d $(DESTDIR)/etc/efingerd
++	cp examples-standard/* $(DESTDIR)/etc/efingerd
++	install -m 0755 -d $(DESTDIR)$(PREFIX)/share/man/man8
++	gzip -9 efingerd.8 -c >$(DESTDIR)$(PREFIX)/share/man/man8/efingerd.8.gz
+ 
+-install-doc: efingerd 
+-	gzip -9 efingerd.8 -c >$(MANDIR)/efingerd.8.gz

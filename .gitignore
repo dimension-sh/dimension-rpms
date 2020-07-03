@@ -3,3 +3,4 @@ BUILDROOT/
 RPMS/
 SRPMS/
 REPO/
+SOURCES/*.tar.gz
