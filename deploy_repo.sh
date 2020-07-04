@@ -14,7 +14,7 @@ rm -rf public/*
 
 echo "Copying new files"
 cp -R REPO/* public/
-cat README.repo.md | pandoc -t html --ascii > public/index.html
+cat README.md | pandoc -t html --ascii > public/index.html
 cp dimension-rpms.repo public/
 
 echo "Publishing..."
