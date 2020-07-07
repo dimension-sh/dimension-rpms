@@ -3,7 +3,7 @@
 Summary: Another finger daemon for unix capable of fine-tuning your output.
 Name: efingerd
 Version: 1.6.5
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 Group: Applications/Internet
 
@@ -55,3 +55,9 @@ rm -rf %{buildroot}
 %{_unitdir}/finger@.service
 %attr(0755,root,root) %{_sbindir}/efingerd
 %{_mandir}/man8/efingerd.8*
+
+%changelog
+* Tue Jul 07 2020 Andrew Williams <andy@tensixtyone.com> 1.6.5-2
+- Fix systemd service to ignore Exit 255 errors
+* Fri Jul 03 2020 Andrew Williams <andy@tensixtyone.com> 1.6.5-1
+- Initial RPM release

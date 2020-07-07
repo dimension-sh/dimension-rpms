@@ -3,5 +3,5 @@ Description=Finger Per-Connection Server
 
 [Service]
 User=nobody
-ExecStart=/usr/local/sbin/efingerd
+ExecStart=-/usr/local/sbin/efingerd
 StandardInput=socket
