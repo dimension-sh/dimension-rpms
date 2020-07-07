@@ -9,11 +9,11 @@ mkdir public
 git worktree prune
 git worktree add public gh-pages
 
-echo "Removing existing files"
-rm -rf public/*
+echo "Removing existing repodata files"
+rm -rf public/*/repodata
 
 echo "Copying new files"
-cp -R REPO/* public/
+cp -Rf REPO/* public/
 cat README.md | pandoc -t html --ascii > public/index.html
 cp dimension-rpms.repo public/
 
