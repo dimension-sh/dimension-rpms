@@ -1,0 +1,31 @@
+diff -up alpine-2.21/alpine/alpine.c.me alpine-2.21/alpine/alpine.c
+diff -up alpine-2.21/pith/smime.c.me alpine-2.21/pith/smime.c
+--- alpine-2.21/pith/smime.c.me	2020-02-13 16:54:36.842373446 +0100
++++ alpine-2.21/pith/smime.c	2020-02-13 17:13:37.930022666 +0100
+@@ -45,6 +45,7 @@ static char rcsid[] = "$Id: smime.c 1176
+ #ifdef PASSFILE
+ #include "../pith/imap.h"
+ #endif /* PASSFILE */
++#include "../pith/options.h"
+ 
+ #include <openssl/buffer.h>
+ #include <openssl/x509v3.h>
+diff -up alpine-2.21/pith/smkeys.c.me alpine-2.21/pith/smkeys.c
+--- alpine-2.21/pith/smkeys.c.me	2020-02-13 16:54:29.930310541 +0100
++++ alpine-2.21/pith/smkeys.c	2020-02-13 17:15:00.688801681 +0100
+@@ -34,6 +34,7 @@ static char rcsid[] = "$Id: smkeys.c 126
+ #include "../pith/util.h"
+ #include "../pith/mailindx.h"
+ #include "../pith/readfile.h"
++#include "../pith/options.h"
+ #include "smkeys.h"
+ 
+ #ifdef APPLEKEYCHAIN
+@@ -50,7 +51,6 @@ static int       mem_add_extra_cacerts(c
+ int		 compare_certs_by_name(const void *data1, const void *data2);
+ int		 password_policy_check(char *);
+ 
+-int  (*pith_smime_enter_password)(char *, char *, size_t);
+ 
+ /* test if password passes a predetermined policy.
+  * return value: 0 - does not pass; 1 - it passes 
