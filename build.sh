@@ -3,7 +3,8 @@ cd $(dirname $0)
 mkdir -p {BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 
 for spec in SPECS/*.spec; do
-    spectool -g -A -R "${spec}"
+    spectool -g -A -C SOURCES "${spec}"
+    rpmbuild -bs --define "_topdir `pwd`" --nodebuginfo "${spec}"
     rpmbuild -bb --define "_topdir `pwd`" --nodebuginfo "${spec}"
 done
 
