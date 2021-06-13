@@ -3,7 +3,7 @@
 Summary: Another finger daemon for unix capable of fine-tuning your output.
 Name: efingerd
 Version: 1.6.5
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL
 Group: Applications/Internet
 
@@ -50,13 +50,15 @@ rm -rf %{buildroot}
 
 
 %files
-%{_sysconfdir}/efingerd
+%config(noreplace) %{_sysconfdir}/efingerd
 %{_unitdir}/finger.socket
 %{_unitdir}/finger@.service
 %attr(0755,root,root) %{_sbindir}/efingerd
 %{_mandir}/man8/efingerd.8*
 
 %changelog
+* Sun Jun 13 2021 Andrew Williams <andy@tensixtyone.com> 1.6.5-3
+- Fix systemd service to point to the correct binary location
 * Tue Jul 07 2020 Andrew Williams <andy@tensixtyone.com> 1.6.5-2
 - Fix systemd service to ignore Exit 255 errors
 * Fri Jul 03 2020 Andrew Williams <andy@tensixtyone.com> 1.6.5-1

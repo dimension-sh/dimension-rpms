@@ -4,4 +4,5 @@ RPMS/
 SRPMS/
 REPO/
 SOURCES/*.tar.gz
+SOURCES/*.tar.bz2
 public/
