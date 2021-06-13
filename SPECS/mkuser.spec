@@ -1,6 +1,6 @@
 Name:           mkuser
 Version:        1.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
 
 License:        MIT
@@ -34,9 +34,11 @@ install -p mkuser.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/mkuser.1
 %license LICENSE
 %doc README.md
 %{_bindir}/mkuser
-%config %{_sysconfdir}/mkuser/*
+%config(noreplace) %{_sysconfdir}/mkuser/*
 %{_mandir}/*/*
 
 %changelog
+* Sun Jun 13 2021 Andrew Williams <andy@tensixtyone.com> 1.1.1-2
+- Fixed package so it doesn't overwrite config files
 * Sat Jun 12 2021 Andrew Williams <andy@tensixtyone.com> 1.1.1-1
 - Initial RPM package
