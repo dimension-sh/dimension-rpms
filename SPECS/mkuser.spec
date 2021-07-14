@@ -1,5 +1,5 @@
 Name:           mkuser
-Version:        1.2.0
+Version:        1.2.1
 Release:        1%{?dist}
 Summary:        mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
 
@@ -40,6 +40,8 @@ install -p mkuser.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/mkuser.1
 %{_mandir}/*/*
 
 %changelog
+* Wed Jul 14 2021 Andrew Williams <andy@tensixtyone.com> 1.2.1-1
+- Updated to v1.2.1
 * Tue Jun 22 2021 Andrew Williams <andy@tensixtyone.com> 1.2.0-1
 - Updated to v1.2.0
 * Sun Jun 13 2021 Andrew Williams <andy@tensixtyone.com> 1.1.1-2
