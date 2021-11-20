@@ -9,8 +9,11 @@ Source0:        https://github.com/dimension-sh/mkuser/archive/%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
+BuildRequires:  python3-rpm-macros
 
 Requires: python3-pyyaml
+
+%?python_enable_dependency_generator
 
 %description
 mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
@@ -19,25 +22,31 @@ mkuser is a simple tool to allow for the easy creation of users on a tilde style
 %autosetup -n mkuser-%{version}
 
 %build
+%py3_build
 
 %install
+%py3_install
 mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
 mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man1
 mkdir -p ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser
 mkdir -p ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/pre.d
 mkdir -p ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/post.d
 
-install -p -m 755 mkuser ${RPM_BUILD_ROOT}%{_bindir}/mkuser
 install -p mkuser.yaml ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/mkuser.yaml
 install -p mail.tmpl ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/mail.tmpl
 install -p mkuser.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/mkuser.1 
 
+%check
+%{__python3} setup.py test
+
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/mkuser
 %config(noreplace) %{_sysconfdir}/mkuser/*
+%{_bindir}/mkuser
 %{_mandir}/*/*
+%{python3_sitelib}/mkuser/
+%{python3_sitelib}/mkuser-%{version}*
 
 %changelog
 * Sat Nov 20 2021 Andrew Williams <andy@tensixtyone.com> 2.0.0-1
