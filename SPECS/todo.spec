@@ -2,7 +2,7 @@
 
 Summary: A minimalist todo list manager
 Name: todo
-Version: 2020.07.10
+Version: 2020.09.05
 Release: 1%{?dist}
 License: GPL
 Group: Applications/Internet
@@ -39,5 +39,7 @@ rm -rf %{buildroot}
 %{_mandir}/man1/todo.1*
 
 %changelog
-* Fri Jul 10 2020 Andrew Williams <andy@tensixtyone.com> 2020-07.10-1
+* Sun Nov 21 2021 Andrew Williams <andy@tensixtyone.com> 2020.09.05-1
+- Updated to 2020.09.05
+* Fri Jul 10 2020 Andrew Williams <andy@tensixtyone.com> 2020.07.10-1
 - Initial RPM package
