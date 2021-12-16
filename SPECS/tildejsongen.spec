@@ -1,5 +1,5 @@
 Name:           tildejsongen
-Version:        0.2.1
+Version:        0.2.3
 Release:        1%{?dist}
 Summary:        A simple 'tilde.json' generator for Linux based tilde servers.
 
