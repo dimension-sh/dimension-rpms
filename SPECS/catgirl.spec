@@ -2,7 +2,7 @@
 
 Summary: a TLS-only terminal IRC client.
 Name: catgirl
-Version: 1.9a
+Version: 2.1
 Release: 2%{?dist}
 License: BSD 2-Clause
 Group: Applications/Internet
