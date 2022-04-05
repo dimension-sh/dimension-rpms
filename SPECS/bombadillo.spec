@@ -2,7 +2,7 @@
 
 Summary: Bombadillo is a non-web browser for the terminal.
 Name: bombadillo
-Version: 2.3.3
+Version: 2.4.0
 Release: 1%{?dist}
 License: GNU GPL v3
 Group: Applications/Internet
