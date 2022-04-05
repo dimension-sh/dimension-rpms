@@ -1,0 +1,9 @@
+[Unit]
+Description=NNCP Daemon Activation Socket
+Documentation=info:nncp
+
+[Socket]
+ListenStream=0.0.0.0:1199
+
+[Install]
+WantedBy=sockets.target

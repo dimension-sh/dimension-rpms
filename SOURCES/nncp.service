@@ -1,0 +1,10 @@
+[Unit]
+Description=NNCP Daemon
+Documentation=info(nncp)
+
+[Service]
+ExecStart=/usr/bin/nncp-daemon
+StandardInput=socket
+
+[Install]
+Also=nncp.socket
