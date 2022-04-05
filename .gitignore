@@ -5,4 +5,5 @@ SRPMS/
 REPO/
 SOURCES/*.tar.gz
 SOURCES/*.tar.bz2
+SOURCES/*.tar.xz
 public/
