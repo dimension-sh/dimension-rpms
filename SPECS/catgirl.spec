@@ -3,7 +3,7 @@
 Summary: a TLS-only terminal IRC client.
 Name: catgirl
 Version: 2.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: BSD 2-Clause
 Group: Applications/Internet
 
@@ -12,7 +12,7 @@ Source0: https://git.causal.agency/catgirl/snapshot/catgirl-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: glibc-devel, ctags, libretls-devel, ncurses-devel
 
-Requires: libretls
+Requires: libretls >= 3.5.2
 Requires: ncurses-libs
 
 %description
