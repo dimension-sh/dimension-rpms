@@ -3,7 +3,7 @@
 
 Summary: lowdown is a Markdown translator producing HTML5, roff documents in the ms and man formats, LaTeX, gemini, and terminal output.
 Name: lowdown
-Version: 0.11.2
+Version: 1.0.2
 Release: 1%{?dist}
 License: ISC License
 Group: Applications/Internet

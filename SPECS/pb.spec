@@ -2,7 +2,7 @@
 
 Summary: A helper utility for using 0x0 pastebin services
 Name: pb
-Version: 2020.10.27
+Version: 2022.11.03
 Release: 1%{?dist}
 License: GPL
 Group: Applications/Internet
