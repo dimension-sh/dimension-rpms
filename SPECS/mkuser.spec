@@ -1,5 +1,5 @@
 Name:           mkuser
-Version:        2.0.1
+Version:        2.0.2
 Release:        1%{?dist}
 Summary:        mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
 
