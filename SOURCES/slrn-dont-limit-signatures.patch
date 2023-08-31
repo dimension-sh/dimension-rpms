@@ -1,0 +1,11 @@
+--- a/src/post.c
++++ b/src/post.c
+@@ -949,7 +949,7 @@ static Slrn_Mime_Error_Obj *
+ 	raw_line = tmp;
+      }
+ 
+-   if (sig_lines > 4)
++   if (sig_lines > 10)
+      err = slrn_add_mime_error(err,
+ 			       _("Please keep your signature short. 4 lines is a commonly accepted limit."),
+ 			       NULL, lineno, MIME_ERROR_NET);
