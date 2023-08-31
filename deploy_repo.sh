@@ -19,3 +19,4 @@ cp dimension-rpms.repo public/
 
 echo "Publishing..."
 cd public && git add --all && git commit -m "Publishing updated repo"
+git push --all
