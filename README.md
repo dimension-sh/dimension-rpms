@@ -1,5 +1,6 @@
-Dimension RPMs
-==============
+# Dimension RPMs
+
+[![Liberapay logo](https://img.shields.io/liberapay/receives/dimension.sh.svg?logo=liberapay)](https://liberapay.com/dimension.sh/)
 
 A collection of RPMs used by [dimension.sh](https://dimension.sh), most of which
 are rebuilds of older packages from CentOS 7 for CentOS 8.
