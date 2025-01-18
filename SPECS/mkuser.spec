@@ -1,5 +1,5 @@
 Name:           mkuser
-Version:        2.0.2
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
 
@@ -9,11 +9,9 @@ Source0:        https://github.com/dimension-sh/mkuser/archive/%{version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
-BuildRequires:  python3-rpm-macros
+BuildRequires:  pyproject-rpm-macros
 
 Requires: python3-pyyaml
-
-%?python_enable_dependency_generator
 
 %description
 mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
@@ -22,10 +20,10 @@ mkuser is a simple tool to allow for the easy creation of users on a tilde style
 %autosetup -n mkuser-%{version}
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
 mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
 mkdir -p ${RPM_BUILD_ROOT}%{_mandir}/man1
 mkdir -p ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser
@@ -49,6 +47,8 @@ install -p mkuser.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/mkuser.1
 %{python3_sitelib}/mkuser-%{version}*
 
 %changelog
+* Mon Apr 1 2024 Andrew Williams <andy@tensixtyone.com> 2.1.0-1
+- Updated to v2.1.0
 * Sat Nov 20 2021 Andrew Williams <andy@tensixtyone.com> 2.0.0-1
 - Updated to v2.0.0
 * Wed Jul 14 2021 Andrew Williams <andy@tensixtyone.com> 1.2.1-1

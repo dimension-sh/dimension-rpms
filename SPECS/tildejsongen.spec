@@ -1,5 +1,5 @@
 Name:           tildejsongen
-Version:        0.2.3
+Version:        0.3.0
 Release:        1%{?dist}
 Summary:        A simple 'tilde.json' generator for Linux based tilde servers.
 
@@ -40,6 +40,8 @@ A Python application which provides a convenient example.
 
 
 %changelog
+* Mon Apr 1 2024 Andrew Williams <andy@tensixtyone.com> 0.3.0-1
+- Update to v0.3.0
 * Sun Nov 21 2021 Andrew Williams <andy@tensixtyone.com> 0.2.1-1
 - Update to v0.2.1
 * Sun Nov 21 2021 Andrew Williams <andy@tensixtyone.com> 0.2.0-1
