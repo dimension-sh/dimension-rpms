@@ -14,7 +14,7 @@ Source2: finger@.service
 Patch1: efingerd-makefile.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: glibc-devel, systemd
+BuildRequires: glibc-devel, systemd, gcc
 
 %description
 

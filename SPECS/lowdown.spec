@@ -11,7 +11,7 @@ Group: Applications/Internet
 Source0: https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_0_11_2.tar.gz#/lowdown-%{version}.tar.gz
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: glibc-devel
+BuildRequires: glibc-devel, gcc
 
 %description
 lowdown is a Markdown translator producing HTML5, roff documents in the ms and man formats, LaTeX, gemini, and terminal output.

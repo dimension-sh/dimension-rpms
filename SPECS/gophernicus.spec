@@ -12,7 +12,7 @@ Source0: https://github.com/gophernicus/gophernicus/releases/download/%{version}
 Patch1: gophernicus-packaging.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: glibc-devel, systemd
+BuildRequires: glibc-devel, systemd, gcc
 
 %description
 

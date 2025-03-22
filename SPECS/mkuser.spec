@@ -11,7 +11,7 @@ BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  pyproject-rpm-macros
 
-Requires: python3-pyyaml
+Requires:       python3-pyyaml
 
 %description
 mkuser is a simple tool to allow for the easy creation of users on a tilde style server.
