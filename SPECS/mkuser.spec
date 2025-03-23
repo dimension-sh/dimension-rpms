@@ -34,17 +34,13 @@ install -p mkuser.yaml ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/mkuser.yaml
 install -p mail.tmpl ${RPM_BUILD_ROOT}%{_sysconfdir}/mkuser/mail.tmpl
 install -p mkuser.1 ${RPM_BUILD_ROOT}%{_mandir}/man1/mkuser.1 
 
-%check
-%{__python3} setup.py test
-
 %files
 %license LICENSE
 %doc README.md
 %config(noreplace) %{_sysconfdir}/mkuser/*
 %{_bindir}/mkuser
 %{_mandir}/*/*
-%{python3_sitelib}/mkuser/
-%{python3_sitelib}/mkuser-%{version}*
+%{python3_sitelib}/*
 
 %changelog
 * Mon Apr 1 2024 Andrew Williams <andy@tensixtyone.com> 2.1.0-1

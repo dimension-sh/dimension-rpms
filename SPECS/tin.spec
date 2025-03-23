@@ -1,12 +1,13 @@
 Name: tin
 Summary: easy-to-use USENET news reader
 Version: 2.4.5
-Release: 1
+Release: 1%{?dist}
 License: BSD
 Group: Applications/News
 Source: ftp://ftp.tin.org/pub/news/clients/tin/v2.4/%{name}-%{version}.tar.bz2
 Buildroot: /var/tmp/%{name}-%{version}-%{release}
 Packager: Dirk Nimmich <nimmich@muenster.de>
+BuildRequires: byacc
 
 %description
 An easy-to-use USENET news reader for the console using NNTP.

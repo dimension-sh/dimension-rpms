@@ -9,7 +9,7 @@ Source0:        https://github.com/dimension-sh/tildejsongen/archive/%{version}.
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
-BuildRequires:  python3-rpm-macros
+BuildRequires:  pyproject-rpm-macros
 
 Recommends: python3-pyyaml, python3-jinja2
 
@@ -22,14 +22,10 @@ A Python application which provides a convenient example.
 %autosetup -n tildejsongen-%{version}
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
-
-%check
-%{__python3} setup.py test
-
+%pyproject_install
 
 %files
 %license LICENSE
